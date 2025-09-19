@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardsnap - Animal Guessing Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>🎴 Cardsnap</h1>
+        
+        <div id="setup-phase" class="setup-phase">
+            <div class="player-setup">
+                <h2>Add Players (max 10)</h2>
+                <div class="player-input">
+                    <input type="text" id="player-name-input" class="input-field" placeholder="Enter player name" maxlength="20">
+                    <button id="add-player" class="btn btn-secondary">Add Player</button>
+                </div>
+                <div id="players-list" class="players-list">
+                </div>
+                <div style="margin-top: 1.5rem;">
+                    <button id="start-game" class="btn" disabled>Start Game (need at least 2 players)</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="game-area" class="game-area">
+            <div class="game-stats">
+                <div class="stat">Cards left: <span id="cards-left">87</span></div>
+                <div class="stat">Round: <span id="current-round">1</span></div>
+            </div>
+
+            <div class="game-content">
+                <div class="card-section">
+                    <div id="current-card" class="card card-back">
+                        <span>Click to draw a card!</span>
+                    </div>
+                    <div>
+                        <button id="draw-card" class="btn">Draw Card</button>
+                        <button id="reveal-answer" class="btn btn-secondary hidden">Show Answer</button>
+                        <button id="next-round" class="btn btn-secondary hidden">Next Card</button>
+                    </div>
+                    <div id="correct-answer" class="correct-answer hidden"></div>
+                </div>
+
+                <div class="guess-section">
+                    <h3>Guesses</h3>
+                    <div class="guess-form">
+                        <select id="player-select" class="guess-input">
+                            <option value="">Select player</option>
+                        </select>
+                        <input type="text" id="guess-input" class="guess-input" placeholder="Guess what the picture shows..." maxlength="50">
+                        <button id="submit-guess" class="btn btn-small">Submit Guess</button>
+                    </div>
+                    <div id="current-guesses" class="current-guesses"></div>
+                    <div id="scoreboard">
+                        <h4>Scoreboard</h4>
+                        <div id="score-list"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 1.5rem;">
+                <button id="new-game" class="btn btn-secondary">New Game</button>
+                <button id="back-to-setup" class="btn">Back to Player Setup</button>
+            </div>
+
+            <div class="discord-info">
+                💬 <strong>How to play:</strong> Share your screen in Discord and describe the image in voice chat. Other players write their guesses here. The correct answer is the animal's name!
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
